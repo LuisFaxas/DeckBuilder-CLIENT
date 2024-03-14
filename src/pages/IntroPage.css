@@ -1,0 +1,89 @@
+/* Add this to your App.css file */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100vh);
+  }
+}
+
+.intro-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full height */
+  /* background-image: url('../assets/BlueEyes.jpg'); */
+  background-image: url('../assets/ARSYYGO.png');
+  /* background-image: url('../assets/yu_gi_oh___egyptian_god___wallpaper_4k_by_mannyhd29_dftxvjn-pre.jpg'); */
+  /* background-image: url('../assets/BlueEyes.jpg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2000; /* Ensure it's above other content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float 2s ease-in-out infinite;
+  transform: translateY(0); 
+  animation-fill-mode: forwards;
+  opacity: 1; 
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-in-out;
+}
+
+.intro-logo{
+  position: absolute;
+  opacity: .7;
+  /* background-color: rgba(33, 37, 41, 0.7); */
+  border-radius: 10px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  bottom: 80px;
+}
+
+.glass-effect{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(62, 62, 62, 0.2); /* White color with low opacity */
+  backdrop-filter: blur(0px); /* This creates the frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Optional: if you want rounded corners */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-button {
+  position: absolute;
+  bottom: 0;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-button:hover {
+  background-color: #333;
+}

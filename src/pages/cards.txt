@@ -1,0 +1,168 @@
+.card-library{
+    border: 1px solid #000;
+    width: 600px;
+    height: calc(100vh - 100px); /* Set the height to 100% of the viewport height */
+    overflow-y: auto; /* Make the content scrollable */
+    position: relative; /* Needed for the height to work correctly */
+}
+
+.cards-container{
+  width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    max-height: 100vh;
+    
+}
+
+.card-image{
+  height: 200px;
+}
+
+
+#cardItem{
+  padding: 0;
+  border: 1px solid #000;
+  background-color: transparent !important;
+}
+
+#cardBody{
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+#cardTitle{
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;;
+  color: white;
+  font-size: .7rem;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+
+
+import "./CardLibrary.css";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import {
+  CardContainer,
+  CardBody,
+  CardItem,
+} from "../components/ui/3d-card.tsx";
+import {
+  Button,
+  Card,
+  ListGroup,
+  Pagination,
+  Navbar,
+  Form,
+  FormControl,
+} from "react-bootstrap";
+
+const CardLibrary = ({ cards, addCardToDeck, deckId }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState("");
+  const cardsPerPage = 12;
+
+  console.log("this is deckId", deckId);
+
+  // Get current cards
+  const indexOfLastCard = currentPage * cardsPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const currentCards = cards.slice(indexOfFirstCard, indexOfLastCard);
+
+  // Change page
+  const paginate = (direction) => {
+    if (
+      direction === "next" &&
+      currentPage < Math.ceil(cards.length / cardsPerPage)
+    ) {
+      setCurrentPage(currentPage + 1);
+    } else if (direction === "prev" && currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  // Filter cards based on search term
+  const filteredCards = currentCards.filter(
+    (card) =>
+      card.name &&
+      typeof card.name === "string" &&
+      card.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <div>
+      <div className="card-library">
+        <Navbar className="cd-navbar" bg="light" variant="light">
+          <div className="pagination">
+            <Pagination.Prev
+              className="prev"
+              onClick={() => paginate("prev")}
+            />
+            <Form>
+              <FormControl
+                type="text"
+                placeholder="Search"
+                className="mr-sm-2"
+                onChange={(event) => setSearchTerm(event.target.value)}
+              />
+            </Form>
+            <Pagination.Next
+              className="next"
+              onClick={() => paginate("next")}
+            />
+          </div>
+        </Navbar>
+
+        <div className="cardContainer">
+          {currentCards.map((card, index) => (
+            <CardContainer key={index}>
+              <CardBody className="cardBody">
+                <CardItem
+                  as="p"
+                  translateZ="1000"
+                  className="cardName"
+                >
+                  {card.title}
+                </CardItem>
+                <CardItem translateZ="1000"     className="cardItem">
+                  <img src={card.imageUrl} alt={card.name} />
+                </CardItem>
+                <button></button>
+              </CardBody>
+            </CardContainer>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CardLibrary;
+
+
+
+<Dropdown className="dropdown-button">
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+              <MdFilterListAlt />
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+              <Dropdown.Item onClick={() => handleFilterChange("All")}>
+                  All
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => handleFilterChange("Common")}>
+                  Common
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => handleFilterChange("3")}>
+                  Level: 3
+                </Dropdown.Item>
+                {/* Add more dropdown items for additional attributes as needed */}
+              </Dropdown.Menu>
+            </Dropdown>

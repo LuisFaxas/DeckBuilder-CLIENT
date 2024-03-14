@@ -1,0 +1,136 @@
+
+.sidebar {
+  width: 200px;
+  height: calc(120vh - 60px);
+  position: fixed;
+  top: 56px; 
+  left: 0;
+  background-color: #212529;
+  opacity: .9;
+  padding: 8px;
+  
+  /* box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.1); */
+}
+
+.deck-title{
+  font-size: 15px;
+}
+
+
+.deck-name-txt{
+  font-size: 15px;
+  margin-top: 10px;
+ 
+}
+
+.deck-input-container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.deck-name-input{
+  flex-grow: 1;
+  width: 150px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: none;
+  background-color: transparent;
+  outline: transparent;
+  margin-right: 2px;
+  
+}
+
+.deck-name-input:hover{
+  background-color: #343a40;
+  outline: 2px solid #434343;
+  color: #696969;
+}
+
+.deck-name-input:focus{
+  background-color: #343a40;
+  outline: 2px solid #696969;
+  color: lightgray;
+}
+
+.add-deck-button{
+  background-color: transparent;
+  color: #696969;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding-top: 2px;
+  padding-bottom: 1.5px;
+  border: 2px solid transparent;
+  font-size: 15px; /* Adjust as needed */
+  cursor: pointer;
+}
+
+
+.add-deck-button:hover {
+  background-color: #343a40;
+  border: 2px solid #434343;
+  color: #696969;
+}
+.add-deck-button:active {
+  background-color: #343a40;
+  border: 2px solid #696969;
+  color: #696969;
+}
+
+.decks-ul {
+  margin-left: 0;
+  padding-left: 0;
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 15px;
+}
+
+.deck-link-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.deck-link {
+  text-decoration: none; 
+  color: white;
+  text-transform: uppercase;
+  padding-left: 5px;
+  font-size: 15px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.deck-name-container:hover {
+  padding: 1px;
+  background-color:#343a40;
+  padding-left: 10px;
+  border-radius: 5px;
+
+}
+
+.deck-x {
+  text-decoration: none;
+  border: none;
+  margin-left: 5px;
+  border-radius: 5px;
+  padding-top: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px; 
+  height: fit-content;
+  color: white;
+  background-color: transparent;
+  
+}
+
+.deck-x:hover{
+  background-color: #343a40;
+  color: white;
+}
+
+.deck-link-container {
+  
+}

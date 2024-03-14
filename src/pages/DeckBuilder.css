@@ -1,0 +1,93 @@
+.card-library{
+  background-color: rgba(90, 96, 103, 0.6);
+  border-radius: 10px;
+  border: 1px solid #000;
+  width: 700px;
+  min-width: 720px;
+  max-height: calc(100vh - 100px); /* Set the height to 100% of the viewport height */
+  overflow-y: auto; /* Make the content scrollable */
+  position: relative; /* Needed for the height to work correctly */
+}
+
+.deck-builder-title{
+  color: #d6d6d6;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  background-color: rgba(33, 37, 41, 0.95);
+  height: auto;
+  margin: 0;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(52, 59, 65);
+  font-weight: lighter;
+}
+.db-navbar{
+  background-color: rgba(33, 37, 41, 0.95);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  padding-left: 30px;
+  padding-right: 50px;
+  z-index: 1000;
+}
+
+.db-name{
+  color: rgb(160, 160, 160) !important;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+
+}
+.cards-container{
+width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.card-item{
+margin: 0;
+width: 10rem;
+background-color: transparent !important;
+}
+
+.card-title{
+color: white !important;
+font-size: 1rem;
+font-weight: bold;
+text-align: center;
+}
+
+
+
+.delete-button{
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  background-color: transparent;
+  color: #9f9f9f;
+  padding-top: 2px;
+  padding-bottom: 3px;
+  border-radius: 2px;
+  border: 2px solid transparent;
+  font-size: 15px; /* Adjust as needed */
+  cursor: pointer;
+  margin-top: 2px;
+}
+
+.delete-button:hover {
+  background-color: #343a40;
+  /* border: 2px solid #434343; */
+  color: #cbcaca;
+}
+
+.delete-button:active {
+  background-color: #424a51;
+  /* border: 2px solid #696969; */
+  color: #979696;
+}

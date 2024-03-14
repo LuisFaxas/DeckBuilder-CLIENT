@@ -1,0 +1,90 @@
+.cardContainer {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  min-height: 60vh
+}
+
+.cardName{
+  padding: 0;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  margin-bottom: 0;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgb(197, 196, 196);
+
+}
+
+.cardItem {
+  position: relative;
+  width: 200px;
+  
+}
+
+.cardItem img {
+  border-radius: 4px;
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+
+}
+.cardItem img:hover{
+  cursor: pointer;
+  transform: translateZ(100px) !important;
+}
+
+.cardBody{
+  width: fit-content;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  background-color: rgba(33, 37, 41, 0.9);
+}
+
+.cardBody:hover{
+  z-index: 1000;
+  transform: translateZ(30px);
+  box-shadow: 5px 5px 0.75rem #303030;
+}
+
+
+.card-body {
+  position: relative;
+  overflow: hidden;
+  width: 200px; /* same as the CardItem */
+}
+
+/* .card-detail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+} */
+
+/* .card-detail-content {
+  background: white;
+  padding: 20px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
+} */
+
+/* .dnd-copy {
+  transform: none !important;
+} */
