@@ -8,6 +8,7 @@
   background-color: #212529;
   opacity: .9;
   padding: 8px;
+  z-index: 1500;
   
   /* box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.1); */
 }
@@ -110,6 +111,13 @@
   border-radius: 5px;
 
 }
+.deck-name-container:active {
+  padding: 1px;
+  background-color:#65707c;
+  padding-left: 10px;
+  border-radius: 5px;
+
+}
 
 .deck-x {
   text-decoration: none;
@@ -128,6 +136,11 @@
 
 .deck-x:hover{
   background-color: #343a40;
+  color: white;
+}
+
+.deck-x:active{
+  background-color: #65707c;
   color: white;
 }
 

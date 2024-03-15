@@ -24,7 +24,6 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Dropdown from "react-bootstrap/Dropdown";
 import { MdFilterListAlt } from "react-icons/md";
 
-
 const CardLibrary = ({
   cards,
   addCardToDeck,
@@ -37,9 +36,6 @@ const CardLibrary = ({
   const [selectedCard, setSelectedCard] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [filter, setFilter] = useState("");
-
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleOpen = () => setIsOpen(!isOpen);
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
@@ -84,16 +80,24 @@ const CardLibrary = ({
     if (filter) {
       result = result.filter((card) => {
         switch (filter) {
-          case 'All':
-        return true; // Show all cards
-          case 'Common':
-            return card.rarity === 'Common';
-          case '3':
-            return card.level === '3';
-          case 'creature':
-            return card.type === 'creature';
-          case 'artifact':
-            return card.type === 'artifact';
+          case "All":
+            return true; // Show all cards
+              case "1":
+              case "2":
+              case "3":
+              case "4":
+              case "5":
+              case "6":
+              case "7":
+              case "8":
+              case "9":
+              case "10":
+            return card.level === filter;
+
+          case "creature":
+            return card.type === "creature";
+          case "artifact":
+            return card.type === "artifact";
           // Add more cases for each filter option
           default:
             return true; // If no filter is selected, do not filter out any cards
@@ -112,7 +116,7 @@ const CardLibrary = ({
   const currentCards = filteredCards.slice(indexOfFirstCard, indexOfLastCard);
 
   // Change page
- /*  const paginate = (direction) => {
+  /*  const paginate = (direction) => {
     if (
       direction === "next" &&
       currentPage < Math.ceil(cards.length / cardsPerPage)
@@ -145,41 +149,36 @@ const CardLibrary = ({
               className="prev"
               onClick={() => paginate("prev")}
             />
-  <div className="middle-nav-cd">
-            <input
-              type="text"
-              placeholder="Card Search"
-              className="card-search"
-              value={searchTerm}
-              onChange={handleSearchChange}
-            />
+            <div className="middle-nav-cd">
+              <input
+                type="text"
+                placeholder="Card Search"
+                className="card-search"
+                value={searchTerm}
+                onChange={handleSearchChange}
+              />
 
-{/* <div className="dropdown">
-  <button className="dropdown-toggle" onClick={toggleOpen}>
-    <MdFilterListAlt />
-  </button>
+              <Dropdown>
+                <Dropdown.Toggle variant="success" id="dropdown-basic">
+                  <MdFilterListAlt id="filter-icon" />
+                </Dropdown.Toggle>
 
-{isOpen && (
+                <Dropdown.Menu id="dropdown-menu">
+                  <Dropdown.Item id="dropdown-item" onClick={() => handleFilterChange("All")}>
+                    All
+                  </Dropdown.Item>
+                  <Dropdown.Header>By Level</Dropdown.Header>
+                  {[...Array(10)].map((e, i) => (
+                    <Dropdown.Item id="dropdown-item" key={i} onClick={() => handleFilterChange(String(i + 1))}>
+                      {i + 1}
+                    </Dropdown.Item>
+                  ))}
+                
+                  {/* Add more dropdown items for additional attributes as needed */}
+                </Dropdown.Menu>
+              </Dropdown>
 
-    <div className="dropdown-menu">
-      <h2 onClick={() => handleFilterChange("All")}>
-        All
-      </h2>
-      <button onClick={() => handleFilterChange("Common")}>
-        Common
-      </button>
-      <button onClick={() => handleFilterChange("3")}>
-        Level: 3
-      </button>
-      {/* Add more dropdown items for additional attributes as needed 
-    </div>
-
-  )}
-  </div>*/}
-            
-</div> 
-
-
+            </div>
             <IoIosArrowForward
               size={35}
               className="next"

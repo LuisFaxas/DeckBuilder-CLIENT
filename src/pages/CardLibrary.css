@@ -101,13 +101,13 @@
 
 .card-search:hover{
   background-color: #343a40;
-  outline: 2px solid #434343;
+  outline: 1px solid #434343;
   color: #696969;
 }
 
 .card-search:focus{
   background-color: #343a40;
-  outline: 2px solid #696969;
+  outline: 1px solid #696969;
   color: lightgray;
 }
 
@@ -203,18 +203,70 @@
   color: #696969;
   padding-top: 2px;
   padding-bottom: 1.5px;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   font-size: 15px; /* Adjust as needed */
   cursor: pointer;
 }
 
-.dropdown-menu {
-  height: 350px;
-  z-index: 2000;
-  opacity: 1;
+
+
+#dropdown-basic {
+  background: transparent;
+  border: none; 
+  color: #696969;
+  font-size: 0px;
 }
 
-.dropdown-menu > button{
-  height: 100px;
-  background-color: red;
+#dropdown-basic:hover{
+  background-color: #343a40;
+  outline: 1px solid #434343;
+  color: #696969;
+}
+
+#dropdown-basic:focus{
+  background-color: #343a40;
+  outline: 1px solid #696969;
+  color: lightgray;
+  
+}
+
+#filter-icon{
+  font-size: 20px;
+}
+#dropdown-menu{
+  margin-top: 10px;
+  width: 300px;
+  background-color: rgba(33, 37, 41, 0.95);
+  border: 2px solid #434343;
+  color: #c7c3c3;
+  font-size: 15px;
+  text-align: center;
+  width: 100%;
+
+}
+
+.Dopdown.item {
+  color: white;
+}
+.filterByLevel{
+  display: flex;
+  flex: wrap;
+  flex-direction: column;
+}
+
+#dropdown-item{
+  color: #a5a5a5;
+}
+
+#dropdown-item:hover{
+  background-color: #343a40;
+  outline: 1px solid #434343;
+  color: #e2e1e1;
+}
+
+#dropdown-item:focus{
+  background-color: #4a535b;
+  outline: 1px solid #696969;
+  color: lightgray;
+  
 }
