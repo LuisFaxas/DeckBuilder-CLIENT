@@ -97,6 +97,7 @@
   outline: transparent;
   margin-right: 2px;
   text-align: center;
+  color: #a5a5a5;
 }
 
 .card-search:hover{
@@ -110,7 +111,6 @@
   outline: 1px solid #696969;
   color: lightgray;
 }
-
 .cardContainer {
   margin-top: 30px;
   margin-bottom: 30px;

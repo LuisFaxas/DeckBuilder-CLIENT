@@ -9,19 +9,18 @@
   opacity: .9;
   padding: 8px;
   z-index: 1500;
-  
+  padding-top: 20px;
   /* box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.1); */
 }
 
 .deck-title{
   font-size: 15px;
+  opacity: .7;
 }
-
 
 .deck-name-txt{
   font-size: 15px;
   margin-top: 10px;
- 
 }
 
 .deck-input-container{
@@ -39,7 +38,6 @@
   background-color: transparent;
   outline: transparent;
   margin-right: 2px;
-  
 }
 
 .deck-name-input:hover{
@@ -66,12 +64,12 @@
   cursor: pointer;
 }
 
-
 .add-deck-button:hover {
   background-color: #343a40;
   border: 2px solid #434343;
   color: #696969;
 }
+
 .add-deck-button:active {
   background-color: #343a40;
   border: 2px solid #696969;
@@ -144,6 +142,3 @@
   color: white;
 }
 
-.deck-link-container {
-  
-}

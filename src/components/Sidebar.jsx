@@ -45,7 +45,7 @@ const Sidebar = ({ setDeckId }) => {
 
   return (
     <div className="sidebar">
-      <h2 className="deck-title">DECKS</h2>
+      <h2 className="deck-title">ALL DECKS</h2>
 
       <hr style={{ borderColor: "white", borderWidth: "2px" }} />
 
