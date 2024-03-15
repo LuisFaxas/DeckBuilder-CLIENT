@@ -10,7 +10,7 @@
 
 .details-img{
  
-  height: 450px;
+  height: 470px;
   border: 3px solid #000;
 }
 
@@ -58,5 +58,11 @@ p{
 
 .power-div{
   display: flex;
-  justify-content: space-evenly
+  justify-content: space-evenly;
+}
+
+.line-d{
+  color: white;
+  margin-top: 2px;
+  margin-bottom: 4px;
 }

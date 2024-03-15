@@ -13,15 +13,16 @@ const CardDetails = ({ card, show, handleClose }) => {
         <img className="details-img" src={card.imageUrl} alt={card.title} />
         <div className="modal-content">
           <p> Type: {card.types} </p>
+          <hr className="line-d"></hr>
           <p> Level: {card.level}</p>
-
+          <hr className="line-d"></hr>
           <div className="power-div">
             <p> Attack: {card.atk}</p>
             <p> Defense: {card.def}</p>
           </div>
-
+          <hr className="line-d"></hr>
           <p> Attribute: {card.attribute}</p>
-
+          
           <div className="description-div">
             <p>Description: </p>
             <p>{card.lore}</p>
